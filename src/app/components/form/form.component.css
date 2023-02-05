@@ -1,0 +1,14 @@
+.form__head {
+  font-family: 'Hind', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.jumbotron {
+  padding: 3rem;
+  background-color: antiquewhite;
+  border-radius: .3rem;
+}
+
