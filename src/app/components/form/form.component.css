@@ -12,3 +12,6 @@
   border-radius: .3rem;
 }
 
+select {
+  cursor: pointer;
+}

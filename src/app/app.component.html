@@ -2,5 +2,5 @@
 <app-navbar [titulo]="'NOTIAPP'"></app-navbar>
 <div class="container">
   <app-form (parametrosSeleccionados)='buscarNoticias($event)'></app-form> <!-- recibe lo que se emite en el form.ts -->
-  <app-list></app-list> <!-- se va a encargar de mostrar la info, recibida de la api, en las diferentes cards -->
+  <app-list [listNoticias]="listadoNoticias"></app-list> <!-- se va a encargar de mostrar la info, recibida de la api, en las diferentes cards -->
 </div>
