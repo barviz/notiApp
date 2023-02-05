@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'api-noticias';
+
+  /*
+  acá se va a consumir el servicio
+  */
+  buscarNoticias(parametro: any) {
+    console.log("soy el padre");
+    console.log(parametro);
+  }
+
 }

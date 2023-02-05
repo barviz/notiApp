@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-form',
@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class FormComponent implements OnInit {
+
+  /*
+  output: decorador que sirve para
+  enviar datos fuera de un componente
+  */
+  /* los datos de este form, categoria y paises, que se seleccionarán
+  son los que se van a pasar al componente que luego de recibir esta info va a realizar la
+  búsqueda */
+  @Output() parametrosSeleccionados = new EventEmitter<any>();
 
   categoriaSeleccionada = 'general';
   paisSeleccionado = 'ar';
@@ -38,8 +47,15 @@ export class FormComponent implements OnInit {
   }
 
   buscarNoticia(){
-    console.log(this.categoriaSeleccionada);
-    console.log(this.paisSeleccionado);
+
+    /*console.log(this.categoriaSeleccionada);
+    console.log(this.paisSeleccionado);*/
+
+    const PARAMETROS = {
+      categoria: this.categoriaSeleccionada,
+      pais: this.paisSeleccionado
+    }
+    this.parametrosSeleccionados.emit(PARAMETROS);
   }
 
 }
